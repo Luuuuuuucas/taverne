@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 168 34 27;    /* #A8221B */
+    --secondary: 253 238 227; /* #FDEEE3 */
+    --tertiary: 58 48 42;     /* #3A302A */
+    --amber: 217 165 102;     /* #D9A566 */
+    --dark: 34 34 34;         /* #222222 */
+    --cream: 245 240 225;     /* #F5F0E1 */
+  }
+  
+  body {
+    @apply bg-secondary text-dark antialiased;
+    background-image: url('/images/texture-paper.png');
+    background-repeat: repeat;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-serif text-primary text-center mb-12 relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-amber rounded-full mt-4;
+  }
+  
+  .taverne-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300;
+  }
+  
+  .taverne-button {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .wood-bg {
+    background-image: url('/images/wood-texture.jpg');
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgba(58, 48, 42, 0.8);
+  }
+
+  /* Ajout des nouvelles classes pour le menu */
+  .font-hand {
+    font-family: 'Caveat', cursive;
+  }
+  
+  .font-cursive {
+    font-family: 'Satisfy', cursive;
+  }
+}
